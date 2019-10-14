@@ -7,7 +7,10 @@ public class MainMenuManager : MonoBehaviour {
     //public TextMeshPro highScoreText;
 
     public CanvasGroup title;
+    [Range(0.0f, 10.0f)]
+    public float titleFadeTime = 0.5f;
     private float desiredAlpha;
+    private float lerpValue;
 
     private bool isTransitioning;
     //public const string HIGH_SCORE_TEXT = "HIGH SCORE: ";
@@ -30,7 +33,15 @@ public class MainMenuManager : MonoBehaviour {
     }
 
     private void Update() {
-        title.alpha = Mathf.Lerp(title.alpha, desiredAlpha, 0.1f);
+
+        if (title.alpha != desiredAlpha) {
+            
+            title.alpha = Mathf.Lerp(title.alpha, desiredAlpha, lerpValue);
+            lerpValue += titleFadeTime * Time.unscaledDeltaTime;
+
+        } else {
+            lerpValue = 0.0f;
+        }
     }
 
     private void OnDisable() {
@@ -39,6 +50,7 @@ public class MainMenuManager : MonoBehaviour {
 
     private void OnSceneAddetiveClose() {
         desiredAlpha = 1f;
+        lerpValue = 0.0f;
     }
 
     public void OpenSceneAddetive(int index) {
@@ -57,6 +69,7 @@ public class MainMenuManager : MonoBehaviour {
                 break;
         }
         desiredAlpha = 0f;
+        lerpValue = 0.0f;
     }
 
     private void PlayUIAudio() {
