@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Transition : ScriptableObject {
+public abstract class TransitionSO : ScriptableObject {
 
     /// <summary>
     /// Returns anchored position first then a target postion

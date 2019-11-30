@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "SideToSide", menuName = "MovingTransion/SideToSideTransition")]
-public class SideToSideTransition : Transition {
+[CreateAssetMenu(fileName = "SideToSide", menuName = "Acedia/MovingTransion/SideToSideTransition")]
+public class SideToSideTransitionSO : TransitionSO {
 
     public float minXPosition = -2800.0f;
     public float maxXposition = 2800.0f;

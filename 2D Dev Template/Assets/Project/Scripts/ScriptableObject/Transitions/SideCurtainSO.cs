@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "SideCurtain", menuName = "MovingTransion/SideCurtainTransition")]
-public class SideCurtain : Transition {
+[CreateAssetMenu(fileName = "SideCurtain", menuName = "Acedia/MovingTransion/SideCurtainTransition")]
+public class SideCurtainSO : TransitionSO {
 
     public float startingX = 550.0f;
     [Range(0.0f, 50.0f)]

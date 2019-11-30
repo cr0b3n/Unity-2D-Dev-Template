@@ -4,7 +4,7 @@
 public class TransitionController : MonoBehaviour {
     
     public RectTransform rectTransform;
-    public Transition transition;
+    public TransitionSO transition;
     //public float minPos;
     //public float maxPos;
 
